@@ -18,11 +18,6 @@ class PriceProductOfferVolumesRestApiDependencyProvider extends AbstractBundleDe
      */
     public const SERVICE_UTIL_ENCODING = 'SERVICE_UTIL_ENCODING';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -31,11 +26,6 @@ class PriceProductOfferVolumesRestApiDependencyProvider extends AbstractBundleDe
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {

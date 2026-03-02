@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Glue\PriceProductOfferVolumesRestApi\Plugin;
+namespace SprykerTest\Glue\PriceProductVolumesRestApi\Plugin;
 
 use Codeception\Test\Unit;
 use Generated\Shared\DataBuilder\CurrentProductPriceBuilder;
@@ -22,16 +22,13 @@ use Spryker\Shared\PriceProductOfferVolume\PriceProductOfferVolumeConfig;
  *
  * @group SprykerTest
  * @group Glue
- * @group PriceProductOfferVolumesRestApi
+ * @group PriceProductVolumesRestApi
  * @group Plugin
  * @group RestProductOfferPricesAttributesMapperPluginTest
  * Add your own group annotations below this line
  */
 class RestProductOfferPricesAttributesMapperPluginTest extends Unit
 {
-    /**
-     * @return void
-     */
     public function testMapWillMapCurrentProductPriceTransferToRestProductOfferPricesAttributesTransfer(): void
     {
         // Arrange
@@ -91,9 +88,6 @@ class RestProductOfferPricesAttributesMapperPluginTest extends Unit
         $this->assertEquals(777, $volumePrice2->getGrossAmount());
     }
 
-    /**
-     * @return void
-     */
     public function testMapWillNotMapAnythingWhenPriceDataIsAbsent(): void
     {
         // Arrange
@@ -124,9 +118,6 @@ class RestProductOfferPricesAttributesMapperPluginTest extends Unit
         $this->assertCount(0, $price->getVolumePrices());
     }
 
-    /**
-     * @return void
-     */
     public function testMapWillMapVolumePricesByPriceTypeWhenPriceDataByPriceTypeProvided(): void
     {
         // Arrange

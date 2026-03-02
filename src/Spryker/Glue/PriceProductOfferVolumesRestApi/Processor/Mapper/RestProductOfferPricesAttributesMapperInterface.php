@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestProductOfferPricesAttributesTransfer;
 
 interface RestProductOfferPricesAttributesMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CurrentProductPriceTransfer $currentProductPriceTransfer
-     * @param \Generated\Shared\Transfer\RestProductOfferPricesAttributesTransfer $restProductOfferPricesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestProductOfferPricesAttributesTransfer
-     */
     public function mapCurrentProductPriceTransferToRestProductOfferPricesAttributesTransfer(
         CurrentProductPriceTransfer $currentProductPriceTransfer,
         RestProductOfferPricesAttributesTransfer $restProductOfferPricesAttributesTransfer

@@ -14,9 +14,6 @@ use Spryker\Glue\PriceProductOfferVolumesRestApi\Processor\Mapper\RestProductOff
 
 class PriceProductOfferVolumesRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\PriceProductOfferVolumesRestApi\Processor\Mapper\RestProductOfferPricesAttributesMapperInterface
-     */
     public function createRestProductOfferPricesAttributesMapper(): RestProductOfferPricesAttributesMapperInterface
     {
         return new RestProductOfferPricesAttributesMapper(
@@ -24,9 +21,6 @@ class PriceProductOfferVolumesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\PriceProductOfferVolumesRestApi\Dependency\Service\PriceProductOfferVolumesRestApiToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): PriceProductOfferVolumesRestApiToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(PriceProductOfferVolumesRestApiDependencyProvider::SERVICE_UTIL_ENCODING);
