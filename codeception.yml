@@ -1,6 +1,6 @@
-namespace: PriceProductVolumesRestApi
+namespace: PriceProductOfferVolumesRestApi
 include:
-    - tests/SprykerTest/Glue/PriceProductVolumesRestApi
+    - tests/SprykerTest/Glue/PriceProductOfferVolumesRestApi
 paths:
     tests: tests
     output: tests/_output

@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\Glue\PriceProductVolumesRestApi\Plugin;
+namespace SprykerTest\Glue\PriceProductOfferVolumesRestApi\Plugin;
 
 use Codeception\Test\Unit;
 use Generated\Shared\DataBuilder\CurrentProductPriceBuilder;
@@ -22,7 +22,7 @@ use Spryker\Shared\PriceProductOfferVolume\PriceProductOfferVolumeConfig;
  *
  * @group SprykerTest
  * @group Glue
- * @group PriceProductVolumesRestApi
+ * @group PriceProductOfferVolumesRestApi
  * @group Plugin
  * @group RestProductOfferPricesAttributesMapperPluginTest
  * Add your own group annotations below this line
