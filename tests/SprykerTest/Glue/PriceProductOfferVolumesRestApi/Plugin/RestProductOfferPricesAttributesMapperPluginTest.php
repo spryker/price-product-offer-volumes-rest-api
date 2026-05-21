@@ -88,6 +88,32 @@ class RestProductOfferPricesAttributesMapperPluginTest extends Unit
         $this->assertEquals(777, $volumePrice2->getGrossAmount());
     }
 
+    public function testMapWillNotMapVolumePricesWhenPriceDataIsNotJsonObject(): void
+    {
+        // Arrange: price data is a JSON scalar (number), not an object — simulates bridge fix returning null
+        $currentProductPriceTransfer = (new CurrentProductPriceBuilder([
+            CurrentProductPriceTransfer::PRICE_DATA => '1234567890',
+        ]))->build();
+
+        $restProductOfferPricesAttributesTransfer = (new RestProductOfferPricesAttributesBuilder())->build();
+        $restProductOfferPricesAttributesTransfer->addPrice(
+            (new RestProductOfferPriceAttributesBuilder([
+                RestProductOfferPriceAttributesTransfer::PRICE_TYPE_NAME => 'DEFAULT',
+            ]))->build(),
+        );
+
+        // Act
+        $restProductOfferPricesAttributesTransfer = (new RestProductOfferPricesAttributesMapperPlugin())->map(
+            $currentProductPriceTransfer,
+            $restProductOfferPricesAttributesTransfer,
+        );
+
+        // Assert
+        /** @var \Generated\Shared\Transfer\RestProductOfferPriceAttributesTransfer $price */
+        $price = $restProductOfferPricesAttributesTransfer->getPrices()->offsetGet(0);
+        $this->assertCount(0, $price->getVolumePrices());
+    }
+
     public function testMapWillNotMapAnythingWhenPriceDataIsAbsent(): void
     {
         // Arrange
